@@ -1,0 +1,1700 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RAIHAN MODZ • CODING HUB</title>
+
+<!-- GOOGLE LOGIN -->
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:#070a10;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+
+  height:65px;
+  padding:0 20px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  background:rgba(10,14,22,.95);
+  backdrop-filter:blur(15px);
+
+  border-bottom:1px solid #252c38;
+}
+
+.logo{
+  font-size:20px;
+  font-weight:800;
+  letter-spacing:1px;
+}
+
+.logo span{
+  color:#60a5fa;
+}
+
+.login-btn{
+  padding:9px 16px;
+  border:0;
+  border-radius:9px;
+  background:#3b82f6;
+  color:white;
+  cursor:pointer;
+}
+
+/* =========================
+   NAV
+========================= */
+
+nav{
+  position:sticky;
+  top:65px;
+  z-index:900;
+
+  display:flex;
+  gap:22px;
+  justify-content:center;
+
+  padding:13px 15px;
+  overflow-x:auto;
+
+  background:#0c1018;
+  border-bottom:1px solid #202733;
+}
+
+nav a{
+  color:#9ca3af;
+  text-decoration:none;
+  white-space:nowrap;
+  font-size:13px;
+}
+
+nav a:hover{
+  color:#60a5fa;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  min-height:65vh;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  text-align:center;
+
+  padding:60px 20px;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #1d3158,
+      #070a10 65%
+    );
+}
+
+.hero-content{
+  max-width:720px;
+}
+
+.hero h1{
+  font-size:50px;
+  line-height:1.15;
+  margin-bottom:20px;
+}
+
+.hero h1 span{
+  color:#60a5fa;
+}
+
+.hero p{
+  color:#9ca3af;
+  line-height:1.8;
+  margin-bottom:30px;
+}
+
+.hero-btn{
+  display:inline-block;
+  padding:14px 25px;
+
+  background:#3b82f6;
+  color:white;
+
+  text-decoration:none;
+  border-radius:10px;
+  font-weight:bold;
+
+  transition:.3s;
+}
+
+.hero-btn:hover{
+  transform:translateY(-4px);
+  background:#2563eb;
+}
+
+/* =========================
+   SECTION
+========================= */
+
+section{
+  scroll-margin-top:120px;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:70px 20px;
+}
+
+.title{
+  text-align:center;
+  margin-bottom:35px;
+}
+
+.title h2{
+  font-size:30px;
+  margin-bottom:10px;
+}
+
+.title p{
+  color:#858c99;
+}
+
+/* =========================
+   FEATURE
+========================= */
+
+.features{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.card{
+  padding:24px;
+
+  background:#101620;
+
+  border:1px solid #252d3a;
+  border-radius:18px;
+
+  cursor:pointer;
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  border-color:#3b82f6;
+  box-shadow:0 15px 35px rgba(0,0,0,.25);
+}
+
+.icon{
+  font-size:35px;
+  margin-bottom:14px;
+}
+
+.card h3{
+  margin-bottom:9px;
+}
+
+.card p{
+  color:#9299a6;
+  font-size:13px;
+  line-height:1.6;
+}
+
+/* =========================
+   LIBRARY
+========================= */
+
+.library{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+
+.lesson{
+  padding:22px;
+
+  background:#101620;
+
+  border:1px solid #252d3a;
+  border-radius:16px;
+
+  transition:.3s;
+}
+
+.lesson:hover{
+  transform:translateY(-4px);
+  border-color:#3b82f6;
+}
+
+.lesson-icon{
+  font-size:30px;
+  margin-bottom:12px;
+}
+
+.lesson h3{
+  margin-bottom:9px;
+}
+
+.lesson p{
+  color:#9299a6;
+  line-height:1.6;
+  font-size:13px;
+}
+
+.lesson button{
+  margin-top:15px;
+
+  padding:8px 13px;
+
+  border:0;
+  border-radius:7px;
+
+  background:#1d4ed8;
+  color:white;
+
+  cursor:pointer;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal{
+  position:fixed;
+  inset:0;
+
+  z-index:5000;
+
+  display:none;
+  align-items:center;
+  justify-content:center;
+
+  padding:20px;
+
+  background:rgba(0,0,0,.75);
+  backdrop-filter:blur(8px);
+}
+
+.modal.active{
+  display:flex;
+}
+
+.modal-box{
+  width:100%;
+  max-width:600px;
+  max-height:85vh;
+
+  overflow:auto;
+
+  padding:25px;
+
+  background:#101620;
+
+  border:1px solid #303b4d;
+  border-radius:20px;
+}
+
+.close{
+  float:right;
+
+  border:0;
+  background:#ef4444;
+  color:white;
+
+  padding:7px 12px;
+  border-radius:7px;
+
+  cursor:pointer;
+}
+
+.modal-box h2{
+  margin-bottom:18px;
+}
+
+.modal-box p{
+  color:#a1a8b4;
+  line-height:1.8;
+  white-space:pre-line;
+}
+
+/* =========================
+   PLAYGROUND
+========================= */
+
+.editor-layout{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+.editor-box,
+.preview-box{
+  overflow:hidden;
+
+  border:1px solid #293342;
+  border-radius:15px;
+
+  background:#0c1119;
+}
+
+.box-head{
+  padding:12px 15px;
+  background:#151c27;
+  color:#aeb6c3;
+  font-size:13px;
+}
+
+textarea{
+  width:100%;
+  height:300px;
+
+  padding:15px;
+
+  border:0;
+  outline:0;
+
+  resize:vertical;
+
+  background:#070a10;
+  color:#d1d5db;
+
+  font-family:monospace;
+  font-size:13px;
+}
+
+iframe{
+  width:100%;
+  height:300px;
+
+  border:0;
+  background:white;
+}
+
+.run{
+  margin-top:12px;
+
+  padding:11px 18px;
+
+  border:0;
+  border-radius:8px;
+
+  background:#22c55e;
+  color:white;
+
+  cursor:pointer;
+  font-weight:bold;
+}
+
+/* =========================
+   QUIZ
+========================= */
+
+.quiz{
+  max-width:650px;
+  margin:auto;
+
+  padding:25px;
+
+  background:#101620;
+  border:1px solid #252d3a;
+  border-radius:18px;
+}
+
+.question{
+  font-size:18px;
+  font-weight:bold;
+  margin-bottom:20px;
+}
+
+.answers{
+  display:grid;
+  gap:10px;
+}
+
+.answer{
+  width:100%;
+  padding:13px;
+
+  text-align:left;
+
+  background:#171e29;
+  color:white;
+
+  border:1px solid #293342;
+  border-radius:9px;
+
+  cursor:pointer;
+}
+
+.answer:hover{
+  border-color:#3b82f6;
+}
+
+.quiz-result{
+  margin-top:20px;
+  color:#60a5fa;
+  font-weight:bold;
+}
+
+/* =========================
+   GAME
+========================= */
+
+.game{
+  max-width:500px;
+  margin:auto;
+
+  text-align:center;
+
+  padding:30px;
+
+  background:#101620;
+  border:1px solid #252d3a;
+  border-radius:20px;
+}
+
+.game-number{
+  font-size:55px;
+  font-weight:bold;
+  color:#60a5fa;
+  margin:20px;
+}
+
+.game button{
+  padding:12px 20px;
+
+  border:0;
+  border-radius:9px;
+
+  background:#3b82f6;
+  color:white;
+
+  cursor:pointer;
+}
+
+.score{
+  margin-top:15px;
+  color:#9ca3af;
+}
+
+/* =========================
+   LOGIN MODAL
+========================= */
+
+.login-box{
+  text-align:center;
+}
+
+.login-box h2{
+  margin-bottom:10px;
+}
+
+.login-box p{
+  color:#9299a6;
+  font-size:13px;
+  margin-bottom:25px;
+}
+
+.google-login{
+  display:flex;
+  justify-content:center;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  padding:35px 20px;
+
+  text-align:center;
+
+  border-top:1px solid #202733;
+
+  color:#707784;
+}
+
+footer strong{
+  color:white;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:800px){
+
+  .features,
+  .library{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .editor-layout{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:550px){
+
+  .hero h1{
+    font-size:34px;
+  }
+
+  .features,
+  .library{
+    grid-template-columns:1fr;
+  }
+
+  .container{
+    padding:55px 15px;
+  }
+
+  .logo{
+    font-size:17px;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+  <div class="logo">
+    RAIHAN <span>MODZ</span>
+  </div>
+
+  <button
+    class="login-btn"
+    onclick="openLogin()"
+  >
+    Login
+  </button>
+
+</header>
+
+
+<!-- =========================
+     NAV
+========================= -->
+
+<nav>
+
+  <a href="#home">Home</a>
+  <a href="#fitur">Fitur</a>
+  <a href="#belajar">Perpustakaan</a>
+  <a href="#game">Game</a>
+  <a href="#quiz">Quiz</a>
+  <a href="#playground">Playground</a>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+  <div class="hero-content">
+
+    <h1>
+      Belajar Coding
+      <span>Lebih Seru</span>
+    </h1>
+
+    <p>
+      Belajar HTML, CSS, Python, JavaScript,
+      Git, SQL, dan berbagai dasar programming
+      sambil bermain dan mencoba kode.
+    </p>
+
+    <a
+      href="#fitur"
+      class="hero-btn"
+    >
+      Mulai Sekarang
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     FITUR
+========================= -->
+
+<section id="fitur">
+
+<div class="container">
+
+  <div class="title">
+
+    <h2>🚀 Fitur Utama</h2>
+
+    <p>
+      Pilih fitur yang ingin kamu gunakan.
+    </p>
+
+  </div>
+
+
+  <div class="features">
+
+    <div
+      class="card"
+      onclick="openLesson('HTML')"
+    >
+      <div class="icon">🌐</div>
+      <h3>Belajar HTML</h3>
+      <p>
+        Pelajari struktur website dan
+        tag HTML dari dasar.
+      </p>
+    </div>
+
+
+    <div
+      class="card"
+      onclick="openLesson('CSS')"
+    >
+      <div class="icon">🎨</div>
+      <h3>Belajar CSS</h3>
+      <p>
+        Pelajari styling, layout,
+        warna, dan responsive design.
+      </p>
+    </div>
+
+
+    <div
+      class="card"
+      onclick="openLesson('Python')"
+    >
+      <div class="icon">🐍</div>
+      <h3>Belajar Python</h3>
+      <p>
+        Pelajari dasar Python dengan
+        contoh yang mudah dipahami.
+      </p>
+    </div>
+
+
+    <div
+      class="card"
+      onclick="openLesson('JavaScript')"
+    >
+      <div class="icon">⚡</div>
+      <h3>JavaScript</h3>
+      <p>
+        Belajar membuat website menjadi
+        interaktif.
+      </p>
+    </div>
+
+
+    <div
+      class="card"
+      onclick="location.href='#game'"
+    >
+      <div class="icon">🎮</div>
+      <h3>Mini Game</h3>
+      <p>
+        Latih logika sambil bermain
+        game sederhana.
+      </p>
+    </div>
+
+
+    <div
+      class="card"
+      onclick="location.href='#quiz'"
+    >
+      <div class="icon">🧩</div>
+      <h3>Quiz Coding</h3>
+      <p>
+        Uji pemahaman coding kamu
+        dengan quiz.
+      </p>
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     PERPUSTAKAAN
+========================= -->
+
+<section id="belajar">
+
+<div class="container">
+
+  <div class="title">
+
+    <h2>📚 Perpustakaan Coding</h2>
+
+    <p>
+      Banyak materi berguna untuk perjalanan
+      belajar programming kamu.
+    </p>
+
+  </div>
+
+
+  <div class="library">
+
+
+    <div class="lesson">
+      <div class="lesson-icon">🌐</div>
+      <h3>HTML Dasar</h3>
+      <p>
+        Struktur halaman, heading,
+        paragraph, link, image, button,
+        list, table, dan form.
+      </p>
+      <button onclick="openLesson('HTML')">
+        Pelajari
+      </button>
+    </div>
+
+
+    <div class="lesson">
+      <div class="lesson-icon">🎨</div>
+      <h3>CSS Dasar</h3>
+      <p>
+        Selector, color, font, margin,
+        padding, border, flexbox, grid,
+        dan responsive design.
+      </p>
+      <button onclick="openLesson('CSS')">
+        Pelajari
+      </button>
+    </div>
+
+
+    <div class="lesson">
+      <div class="lesson-icon">🐍</div>
+      <h3>Python Dasar</h3>
+      <p>
+        Variable, tipe data, if, for,
+        while, function, list, dan
+        dictionary.
+      </p>
+      <button onclick="openLesson('Python')">
+        Pelajari
+      </button>
+    </div>
+
+
+    <div class="lesson">
+      <div class="lesson-icon">⚡</div>
+      <h3>JavaScript</h3>
+      <p>
+        Variable, function, event,
+        DOM, button, input, dan
+        interaksi website.
+      </p>
+      <button onclick="openLesson('JavaScript')">
+        Pelajari
+      </button>
+    </div>
+
+
+    <div class="lesson">
+      <div class="lesson-icon">🐙</div>
+      <h3>Git & GitHub</h3>
+      <p>
+        Pelajari konsep version control,
+        repository, commit, branch,
+        dan kolaborasi kode.
+      </p>
+      <button onclick="openLesson('Git')">
+        Pelajari
+      </button>
+    </div>
+
+
+    <div class="lesson">
+      <div class="lesson-icon">🗄️</div>
+      <h3>SQL Dasar</h3>
+      <p>
+        Pelajari database, SELECT,
+        INSERT, UPDATE, DELETE,
+        dan konsep tabel.
+      </p>
+      <button onclick="openLesson('SQL')">
+        Pelajari
+      </button>
+    </div>
+
+
+    <div class="lesson">
+      <div class="lesson-icon">🧠</div>
+      <h3>Algoritma</h3>
+      <p>
+        Belajar cara berpikir sistematis,
+        membuat langkah penyelesaian,
+        dan memecahkan masalah.
+      </p>
+      <button onclick="openLesson('Algoritma')">
+        Pelajari
+      </button>
+    </div>
+
+
+    <div class="lesson">
+      <div class="lesson-icon">🔐</div>
+      <h3>Keamanan Dasar</h3>
+      <p>
+        Kenali konsep password aman,
+        validasi input, HTTPS, dan
+        kebiasaan keamanan website.
+      </p>
+      <button onclick="openLesson('Security')">
+        Pelajari
+      </button>
+    </div>
+
+
+    <div class="lesson">
+      <div class="lesson-icon">💡</div>
+      <h3>Tips Programming</h3>
+      <p>
+        Cara membaca error, mencari bug,
+        membuat kode rapi, dan membangun
+        kebiasaan belajar yang baik.
+      </p>
+      <button onclick="openLesson('Tips')">
+        Pelajari
+      </button>
+    </div>
+
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     GAME
+========================= -->
+
+<section id="game">
+
+<div class="container">
+
+  <div class="title">
+
+    <h2>🎮 Tebak Angka</h2>
+
+    <p>
+      Tebak angka dari 1 sampai 10.
+    </p>
+
+  </div>
+
+
+  <div class="game">
+
+    <p>
+      Tekan tombol untuk mendapatkan
+      angka acak.
+    </p>
+
+    <div
+      class="game-number"
+      id="number"
+    >
+      ?
+    </div>
+
+    <button onclick="playGame()">
+      🎲 Main
+    </button>
+
+    <div
+      class="score"
+      id="gameScore"
+    >
+      Skor: 0
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     QUIZ
+========================= -->
+
+<section id="quiz">
+
+<div class="container">
+
+  <div class="title">
+
+    <h2>🧩 Quiz Coding</h2>
+
+    <p>
+      Uji kemampuan coding kamu.
+    </p>
+
+  </div>
+
+
+  <div class="quiz">
+
+    <div
+      class="question"
+      id="question"
+    >
+      Memuat soal...
+    </div>
+
+    <div
+      class="answers"
+      id="answers"
+    ></div>
+
+    <div
+      class="quiz-result"
+      id="quizResult"
+    ></div>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     PLAYGROUND
+========================= -->
+
+<section id="playground">
+
+<div class="container">
+
+  <div class="title">
+
+    <h2>💻 HTML Playground</h2>
+
+    <p>
+      Tulis kode HTML dan lihat hasilnya.
+    </p>
+
+  </div>
+
+
+  <div class="editor-layout">
+
+    <div class="editor-box">
+
+      <div class="box-head">
+        HTML Editor
+      </div>
+
+      <textarea id="code"><h1>Halo RAIHAN MODZ!</h1>
+
+<p>
+Aku sedang belajar coding.
+</p>
+
+<button onclick="alert('Mantap!')">
+Klik Saya
+</button></textarea>
+
+    </div>
+
+
+    <div class="preview-box">
+
+      <div class="box-head">
+        Preview
+      </div>
+
+      <iframe
+        id="preview"
+        title="Preview HTML"
+      ></iframe>
+
+    </div>
+
+  </div>
+
+
+  <button
+    class="run"
+    onclick="runCode()"
+  >
+    ▶ Jalankan Kode
+  </button>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     LOGIN GOOGLE MODAL
+========================= -->
+
+<div
+  class="modal"
+  id="loginModal"
+  onclick="closeLogin(event)"
+>
+
+  <div class="modal-box login-box">
+
+    <button
+      class="close"
+      onclick="closeLogin()"
+    >
+      ✕
+    </button>
+
+    <h2>🔐 Login RAIHAN MODZ</h2>
+
+    <p>
+      Login menggunakan akun Google.
+    </p>
+
+    <!--
+      GANTI YOUR_GOOGLE_CLIENT_ID
+      DENGAN CLIENT ID GOOGLE CLOUD KAMU.
+    -->
+
+    <div
+      id="g_id_onload"
+      data-client_id="YOUR_GOOGLE_CLIENT_ID"
+      data-callback="handleGoogleLogin"
+      data-auto_prompt="false"
+    ></div>
+
+    <div
+      class="google-login"
+      id="googleButton"
+    ></div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     MATERI MODAL
+========================= -->
+
+<div
+  class="modal"
+  id="lessonModal"
+  onclick="closeLesson(event)"
+>
+
+  <div class="modal-box">
+
+    <button
+      class="close"
+      onclick="closeLesson()"
+    >
+      ✕
+    </button>
+
+    <h2 id="modalTitle">
+      Materi
+    </h2>
+
+    <p id="modalText">
+      Materi akan muncul di sini.
+    </p>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+  <strong>RAIHAN MODZ</strong>
+
+  <br><br>
+
+  Belajar • Bermain • Coding
+
+</footer>
+
+
+<script>
+
+/* =========================
+   GOOGLE LOGIN
+========================= */
+
+function openLogin(){
+
+  document
+    .getElementById("loginModal")
+    .classList.add("active");
+
+  /*
+    Render tombol Google setelah
+    modal dibuka.
+  */
+
+  if(
+    window.google &&
+    google.accounts &&
+    google.accounts.id
+  ){
+
+    const button =
+      document.getElementById("googleButton");
+
+    button.innerHTML = "";
+
+    google.accounts.id.initialize({
+
+      client_id:
+        "YOUR_GOOGLE_CLIENT_ID",
+
+      callback:
+        handleGoogleLogin
+
+    });
+
+    google.accounts.id.renderButton(
+      button,
+      {
+        theme:"outline",
+        size:"large",
+        text:"signin_with",
+        shape:"rectangular",
+        width:300
+      }
+    );
+
+  }
+
+}
+
+
+function handleGoogleLogin(response){
+
+  /*
+    Pada aplikasi nyata, response.credential
+    harus dikirim ke server untuk diverifikasi.
+
+    Jangan menganggap token dari browser
+    sebagai bukti login tanpa verifikasi server.
+  */
+
+  console.log(
+    "Google credential diterima:",
+    response.credential
+  );
+
+  alert(
+    "Login Google berhasil diterima. " +
+    "Untuk aplikasi produksi, token harus " +
+    "diverifikasi di server."
+  );
+
+}
+
+
+function closeLogin(event){
+
+  if(
+    !event ||
+    event.target.id === "loginModal" ||
+    event.target.classList.contains("close")
+  ){
+
+    document
+      .getElementById("loginModal")
+      .classList.remove("active");
+
+  }
+
+}
+
+
+/* =========================
+   PLAYGROUND
+========================= */
+
+function runCode(){
+
+  const code =
+    document.getElementById("code").value;
+
+  document.getElementById("preview")
+    .srcdoc = code;
+
+}
+
+
+/* =========================
+   PERPUSTAKAAN
+========================= */
+
+const lessons = {
+
+HTML: `HTML adalah bahasa markup untuk
+membuat struktur halaman website.
+
+Contoh:
+
+<h1>Judul</h1>
+<p>Paragraf</p>
+<a href="#">Link</a>
+
+Pelajari juga:
+• heading
+• paragraph
+• image
+• link
+• button
+• form
+• table
+• list`,
+
+CSS: `CSS digunakan untuk mengatur
+tampilan website.
+
+Contoh:
+
+body {
+  background: black;
+  color: white;
+}
+
+Materi penting:
+• selector
+• color
+• font
+• margin
+• padding
+• flexbox
+• grid
+• animation
+• responsive design`,
+
+Python: `Python adalah bahasa pemrograman
+yang cocok untuk belajar dasar programming.
+
+Contoh:
+
+nama = "RAIHAN"
+print("Halo", nama)
+
+Materi:
+• variable
+• string
+• number
+• if
+• for
+• while
+• list
+• dictionary
+• function`,
+
+JavaScript: `JavaScript membuat halaman website
+menjadi interaktif.
+
+Contoh:
+
+const tombol =
+document.querySelector("button");
+
+tombol.onclick = function(){
+  alert("Halo!");
+};
+
+Materi:
+• variable
+• function
+• event
+• DOM
+• array
+• object`,
+
+Git: `Git digunakan untuk version control.
+
+Konsep penting:
+
+git init
+git add .
+git commit
+
+GitHub dapat digunakan untuk menyimpan
+dan berbagi repository kode.
+
+Materi:
+• repository
+• commit
+• branch
+• merge
+• remote`,
+
+SQL: `SQL digunakan untuk bekerja dengan
+database.
+
+Contoh:
+
+SELECT * FROM users;
+
+Konsep:
+• SELECT
+• INSERT
+• UPDATE
+• DELETE
+• WHERE
+• database
+• table
+• primary key`,
+
+Algoritma: `Algoritma adalah langkah-langkah
+sistematis untuk menyelesaikan masalah.
+
+Biasakan:
+1. Pahami masalah.
+2. Pecah menjadi bagian kecil.
+3. Buat langkah penyelesaian.
+4. Implementasikan.
+5. Uji hasil.
+6. Perbaiki jika ada error.`,
+
+Security: `Keamanan dasar website:
+
+• Gunakan password yang kuat.
+• Jangan menyimpan password
+  pengguna sebagai teks biasa.
+• Validasi input.
+• Gunakan HTTPS.
+• Jangan membagikan token rahasia.
+• Verifikasi data login di server.`,
+
+Tips: `Tips belajar programming:
+
+• Latihan sedikit tetapi rutin.
+• Jangan takut error.
+• Baca pesan error.
+• Coba ubah contoh kode.
+• Buat project kecil.
+• Simpan project dengan Git.
+• Pelajari alasan kode bekerja,
+  bukan hanya copy-paste.`
+
+};
+
+
+function openLesson(type){
+
+  document.getElementById("modalTitle")
+    .textContent =
+      "📚 " + type;
+
+  document.getElementById("modalText")
+    .textContent =
+      lessons[type];
+
+  document.getElementById("lessonModal")
+    .classList.add("active");
+
+}
+
+
+function closeLesson(event){
+
+  if(
+    !event ||
+    event.target.id === "lessonModal" ||
+    event.target.classList.contains("close")
+  ){
+
+    document.getElementById("lessonModal")
+      .classList.remove("active");
+
+  }
+
+}
+
+
+/* =========================
+   GAME
+========================= */
+
+let gameScore = 0;
+
+function playGame(){
+
+  const number =
+    Math.floor(Math.random() * 10) + 1;
+
+  document.getElementById("number")
+    .textContent = number;
+
+  gameScore++;
+
+  document.getElementById("gameScore")
+    .textContent =
+      "Skor: " + gameScore;
+
+}
+
+
+/* =========================
+   QUIZ
+========================= */
+
+const quizData = [
+
+{
+  question:
+    "Tag HTML untuk heading terbesar?",
+
+  answers:[
+    "<h1>",
+    "<h6>",
+    "<head>",
+    "<title>"
+  ],
+
+  correct:0
+},
+
+{
+  question:
+    "Bahasa untuk mengatur tampilan website?",
+
+  answers:[
+    "HTML",
+    "CSS",
+    "Python",
+    "SQL"
+  ],
+
+  correct:1
+},
+
+{
+  question:
+    "Ekstensi file Python?",
+
+  answers:[
+    ".html",
+    ".css",
+    ".py",
+    ".js"
+  ],
+
+  correct:2
+},
+
+{
+  question:
+    "Bahasa yang membuat website interaktif?",
+
+  answers:[
+    "CSS",
+    "HTML",
+    "JavaScript",
+    "SQL"
+  ],
+
+  correct:2
+},
+
+{
+  question:
+    "Perintah Git untuk membuat commit?",
+
+  answers:[
+    "git save",
+    "git commit",
+    "git upload",
+    "git create"
+  ],
+
+  correct:1
+}
+
+];
+
+
+let currentQuestion = 0;
+let quizScore = 0;
+
+
+function loadQuiz(){
+
+  const data =
+    quizData[currentQuestion];
+
+  document.getElementById("question")
+    .textContent =
+      (currentQuestion + 1) +
+      ". " +
+      data.question;
+
+  const answers =
+    document.getElementById("answers");
+
+  answers.innerHTML = "";
+
+  data.answers.forEach(
+    (answer,index)=>{
+
+      const button =
+        document.createElement("button");
+
+      button.className = "answer";
+
+      button.textContent = answer;
+
+      button.onclick = function(){
+
+        checkAnswer(index);
+
+      };
+
+      answers.appendChild(button);
+
+    }
+  );
+
+}
+
+
+function checkAnswer(index){
+
+  const data =
+    quizData[currentQuestion];
+
+  if(index === data.correct){
+
+    quizScore++;
+
+    document.getElementById("quizResult")
+      .textContent =
+        "✅ Jawaban benar!";
+
+  }else{
+
+    document.getElementById("quizResult")
+      .textContent =
+        "❌ Jawaban belum tepat.";
+
+  }
+
+
+  currentQuestion++;
+
+
+  if(currentQuestion < quizData.length){
+
+    setTimeout(()=>{
+
+      document.getElementById("quizResult")
+        .textContent = "";
+
+      loadQuiz();
+
+    },800);
+
+  }else{
+
+    setTimeout(()=>{
+
+      document.getElementById("question")
+        .textContent =
+          "🎉 Quiz selesai!";
+
+      document.getElementById("answers")
+        .innerHTML =
+          "Skor kamu: " +
+          quizScore +
+          " / " +
+          quizData.length;
+
+      document.getElementById("quizResult")
+        .textContent =
+          "Coba lagi untuk meningkatkan skor.";
+
+      currentQuestion = 0;
+      quizScore = 0;
+
+    },800);
+
+  }
+
+}
+
+
+/* =========================
+   START
+========================= */
+
+runCode();
+loadQuiz();
+
+</script>
+
+</body>
+</html>
